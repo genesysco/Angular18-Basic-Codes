@@ -1,0 +1,12 @@
+<h1>Welcome to including Users !</h1>
+<p>Welcome  {{name}}</p>
+<div class="text-warning">
+	<ng-content select=".yellow"></ng-content>
+</div>
+<div class="col-3 mx-auto">
+	<input type="text" [disabled]="disabled" placeholder="{{disableStatus}} it" class="form-control">
+	<button (click)="onClick()" class="btn btn-outline-primary my-3">Click to {{disableStatus}} the input</button>
+	<br>
+	<input type="text" (keyup)="keyUped()" class="form-control my-3" [(ngModel)]="userWelcome">
+	<label (click)="labelClicked()">Click Me !</label>
+</div>

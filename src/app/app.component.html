@@ -1,0 +1,42 @@
+<div class="container">
+	<div class="row">
+		<div class="col-6 mx-auto my-3">
+			<button class="btn btn-outline-warning" (click)="sectionOne()">
+				Show/Hide Section One
+			</button>
+
+			<button class="btn btn-outline-warning mx-2" (click)="sectionTwo()">
+				Show/Hide Section Two
+			</button>
+
+			<a class="btn btn-outline-warning mx-2 my-3" routerLink="ofs">
+				 Of - From - fromEvent
+			</a>
+
+			<a class="btn btn-outline-warning mx-2 my-3" routerLink="concatMap">
+				Section concat map
+			</a>
+
+			<a class="btn btn-outline-warning mx-2 my-3" routerLink="switchMap">
+				Section Inner & Outer Observables
+			</a>
+
+			<a class="btn btn-outline-warning mx-2 my-3" routerLink="zip-forkJoin">
+				Section Zip & forkJoin Observables
+			</a>
+		</div>
+		<div class="col-7 mx-auto">
+			<router-outlet></router-outlet>
+		</div>
+	</div>
+</div>
+
+<users [user]="myOnlyUser" [class]="section1">
+	<p class="yellow" #textToSuccess>From -> NG - Content</p>
+</users>
+
+<div class="col-3 mx-auto my-3" [class]="section2">
+	<select (change)="selectChanged()" [(ngModel)]="selectedUser">
+		<option  *ngFor="let user of users" [value]="user.age" >{{user.name}}</option>
+	</select>
+</div>
